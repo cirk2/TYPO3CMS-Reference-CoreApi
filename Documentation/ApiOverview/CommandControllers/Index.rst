@@ -162,6 +162,19 @@ method once in your :php:`execute()` function::
    Bootstrap::initializeBackendAuthentication();
 
 
+Initialize Extbase
+------------------
+
+To use Extbase to access the Databse, it needs to be initialised using `\TYPO3\CMS\Extbase\Core\Bootstrap`:
+
+    $bootstrap = GeneralUtility::makeInstance(\TYPO3\CMS\Extbase\Core\Bootstrap::class);
+    $bootstrap->initialize([
+        'extensionName' => 'extension',
+        'pluginName' => 'plugin'
+    ]);
+
+Afterwards Repositories can be instantated and used as usual.
+
 .. _symfony-console-commands-cli:
 
 Running the Command From the Command Line
